@@ -9,12 +9,12 @@ public class PersonComparator implements Comparator<Person> {
 
     @Override
     public int compare(Person p1, Person p2) {
-        int len1 = p1.getSurname().split(" ").length;
-        int len2 = p2.getSurname().split(" ").length;
+        int len1 = p1.getSurname().split("\\P{IsAlphabetic}+").length;
+        int len2 = p2.getSurname().split("\\P{IsAlphabetic}+").length;
 
         if (Math.min(len1, maxLen) != Math.min(len2, maxLen)) {
             return Integer.compare(len1, len2);
         }
-        return Integer.compare(p2.getAge(), p1.getAge());
+        return Integer.compare(p1.getAge(), p2.getAge());
     }
 }
