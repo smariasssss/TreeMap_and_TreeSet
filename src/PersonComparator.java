@@ -15,6 +15,6 @@ public class PersonComparator implements Comparator<Person> {
         if (Math.min(len1, maxLen) != Math.min(len2, maxLen)) {
             return Integer.compare(len1, len2);
         }
-        return Integer.compare(p1.getAge(), p2.getAge());
+        return Integer.compare(p2.getAge(), p1.getAge());
     }
 }
